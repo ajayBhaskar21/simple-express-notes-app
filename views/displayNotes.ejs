@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <%- include('header.ejs') %>
+    Displaying All Notes 
+
+    <ul>
+        <% notes.forEach((note) => { %>
+            <li>Notes Id : <%= note['_id'] %></li>
+            <li>Notes Name : <%= note.notesName %></li>
+            <li>Notes Content : <%= note['notesContent'] %></li>
+            <li><a href="updateNote/<%= note.notesName %>">Update Note</a></li>
+            <li><a href="deleteNote/<%= note.notesName%>">Delete Note</a></li>
+            <br>
+            <br>
+        <% }) %>
+    </ul>
+
+    
+</body>
+</html>
